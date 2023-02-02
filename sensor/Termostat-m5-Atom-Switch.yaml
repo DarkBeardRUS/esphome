@@ -1,0 +1,30 @@
+sensor:
+  - platform: wifi_signal
+    name: WiFi Signal ${name} 
+  - platform: uptime
+    name: Uptime ${name} 
+    
+  - platform: qmp6988
+    temperature:
+      name: "Temperatur6988e ${name}"
+      oversampling: 16x
+    pressure:
+      name: "Pressure ${name}"
+      oversampling: 16x
+    address: 0x70
+    update_interval: 60s
+    iir_filter: 2x
+  - platform: sht3xd
+#    optimistic: true
+    temperature:
+      force_update: true
+      name: "Temperature ${name}"
+      id: temp_sht3xd
+      filters:
+        - lambda: return x + id(temp_correct).state ;
+    humidity:
+      name: "Humidity ${name}"
+      id: hum_sht3xd
+      force_update: true
+    address: 0x44
+    update_interval: 60s
