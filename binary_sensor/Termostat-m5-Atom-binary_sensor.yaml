@@ -1,0 +1,21 @@
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: 39
+#      mode: INPUT_PULLUP
+      inverted: True
+    name: "HW Button ${name}"
+#    device_class: 
+    # filters:
+      # - delayed_off: 10ms
+      # - delayed_on_off: 100ms
+    on_click:
+    - min_length: 50ms
+      max_length: 500ms
+      then:
+        - switch.toggle: relay1
+    - min_length: 550ms
+      max_length: 2000ms
+      then:
+        - switch.toggle: relay2
+    internal: true
