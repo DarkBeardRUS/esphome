@@ -1,0 +1,19 @@
+i2c:
+  - id: grove_bus
+    sda: GPIO25
+    scl: GPIO21
+    scan: True
+
+
+uart:
+  tx_pin: 23
+  rx_pin: 33
+  baud_rate: 115200
+  debug:
+    direction: BOTH
+    dummy_receiver: false
+    after:
+      delimiter: "\n"
+    sequence:
+      - lambda: UARTDebug::log_string(direction, bytes);
+      

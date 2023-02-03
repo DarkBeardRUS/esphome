@@ -4,7 +4,7 @@ binary_sensor:
       number: 39
 #      mode: INPUT_PULLUP
       inverted: True
-    name: "HW Button ${name}"
+    name: "HW Button ${short_name}"
 #    device_class: 
     # filters:
       # - delayed_off: 10ms
