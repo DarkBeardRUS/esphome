@@ -1,0 +1,19 @@
+switch:
+   - platform: gpio
+     name: "Relay 1 ${short_name} "
+     pin: 22
+     id: relay1
+     restore_mode: ${relay1_restore_mode}
+     interlock: &interlock_group [relay1, relay2]
+#    internal: true
+
+   - platform: gpio
+     name: "Relay 2 ${short_name} "
+     pin: 19
+     id: relay2
+     interlock: *interlock_group
+     restore_mode: ${relay2_restore_mode}
+#    internal: true
+
+   - platform: restart
+     name: Restart ${short_name}
