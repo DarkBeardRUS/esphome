@@ -1,0 +1,59 @@
+time:
+  - platform: sntp
+    id: rtctime
+    # ...
+    on_time:
+      - seconds: /10
+        then:
+          - if:
+              condition:
+                wifi.connected:
+              then:
+                - binary_sensor.template.publish:
+                    id: wifi_connect
+                    state: ON
+                - logger.log: WiFi is connected!
+              else:
+                - binary_sensor.template.publish:
+                    id: wifi_connect
+                    state: OFF
+                - logger.log: WiFi is NOT connected!
+############################################################################
+      - seconds: 10
+        minutes: 30
+        hours: 23
+#        days_of_week: MON-FRI
+#        days_of_week: SUN,MON,TUE,WED,THU,FRI,SAT
+        then:
+          - switch.turn_on: pool_c_w
+          - logger.log: Relay 1 ON
+      - seconds: 10
+        minutes: 30
+        hours: 2
+        days_of_week: SUN,MON,TUE,WED,THU
+        then:
+          - switch.turn_off: pool_c_w
+          - logger.log: Relay 1 Off
+      - seconds: 10
+        minutes: 00
+        hours: 2
+        days_of_week: FRI,SAT
+        then:
+          - switch.turn_off: pool_c_w
+          - logger.log: Relay 1 Off
+##############################################################################
+      - seconds: 10
+        minutes: 30
+        hours: 3
+        days_of_week: FRI,SAT
+        then:
+          - switch.turn_on: pool_c_w
+          - logger.log: Relay 1 ON
+      - seconds: 00
+        minutes: 00
+        hours: 7
+        days_of_week: FRI,SAT
+        then:
+          - switch.turn_off: pool_c_w
+          - logger.log: Relay 1 OFF
+###############################################################################
