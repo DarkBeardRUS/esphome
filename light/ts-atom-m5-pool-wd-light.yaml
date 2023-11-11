@@ -1,0 +1,8 @@
+light:
+  - platform: neopixelbus
+    variant: WS2812
+    pin: GPIO27
+    num_leds: 25
+    type: GRB
+    name: "led ${short_name}"
+    id: my_light

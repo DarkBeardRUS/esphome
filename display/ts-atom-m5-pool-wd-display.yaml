@@ -1,0 +1,52 @@
+display:
+   - platform: addressable_light
+     id: led_matrix_display
+     addressable_light_id: my_light
+     width: 5
+     height: 5
+     rotation: 0
+
+     update_interval: 200ms
+     lambda: |-
+       
+       if (id(wifi_connect).state) {
+         it.fill(COLOR_OFF);
+         it.rectangle(0, 0, 5, 5, my_green);  
+       } else {
+         it.rectangle(0, 0, 5, 5, my_red);
+       }
+       if (id(relay1).state) {
+         it.line(0, 1, 5, 1, my_purpur);  
+       } else {
+         it.line(1, 1, 3, 1, my_black);
+       }
+       if (id(relay2).state) {
+         it.line(0, 3, 5, 3, my_purpur);  
+       } else {
+         it.line(1, 3, 3, 3, my_black);
+       }
+       if  (id(relay1).state) {       
+         if (id(tepm_pool).state <= 15) {
+           it.line(0, 2, 5, 2, my_blue);  
+         }
+         if (id(tepm_pool).state >= 20) {
+           it.line(0, 2, 5, 2, my_blue);  
+           it.line(2, 2, 5, 2, my_green);
+         }
+         if (id(tepm_pool).state >= 25) {
+           it.line(0, 2, 5, 2, my_green);  
+           it.line(2, 2, 5, 2, my_yellow);
+         }
+         if (id(tepm_pool).state >= 28) {
+           it.line(0, 2, 5, 2, my_yellow);  
+           it.line(2, 2, 5, 2, my_purpur);
+         }
+         if (id(tepm_pool).state >= 29) {
+           it.line(0, 2, 5, 2, my_purpur);  
+           it.line(2, 2, 5, 2, my_red);
+         }
+         if (id(tepm_pool).state > 30) {
+           it.line(0, 2, 5, 2, my_red);  
+         }
+       }
+    
