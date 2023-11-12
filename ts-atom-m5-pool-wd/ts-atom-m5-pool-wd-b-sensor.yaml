@@ -1,0 +1,22 @@
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: 39
+      inverted: True
+    name: "HW Button ${short_name}"
+    on_click:
+    - min_length: 50ms
+      max_length: 500ms
+      then:
+        - switch.toggle: pool_c_w
+    - min_length: 550ms
+      max_length: 6000ms
+      then:
+        - switch.toggle: relay2
+    internal: true
+
+  - platform: template
+    name: "WiFi Connect"
+    id: wifi_connect
+    internal: true
