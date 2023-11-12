@@ -1,9 +1,5 @@
 status_led:
   pin: 23
-  
-web_server:
-  port: 80
-
 
 text_sensor:
   - platform: wifi_info
