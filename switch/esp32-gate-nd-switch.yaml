@@ -3,7 +3,7 @@ switch:
      pin: 16
      id: relay1
      restore_mode: ${relay1_restore_mode}
-     name: "${friendly_name_gate} Remote"
+     name: ${friendly_name_gate} Remote
      icon: "mdi:gate"
      on_turn_on:
      - delay: 500ms
@@ -13,7 +13,7 @@ switch:
      pin: 17
      id: relay2
      restore_mode: ${relay2_restore_mode}
-     name: "${friendly_name_wicket} Remote"
+     name: ${friendly_name_wicket} Remote
      icon: "mdi:gate"
      on_turn_on:
      - delay: 500ms
