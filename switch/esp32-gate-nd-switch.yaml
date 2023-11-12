@@ -1,0 +1,26 @@
+switch:
+   - platform: gpio
+     pin: 16
+     id: relay1
+     restore_mode: ${relay1_restore_mode}
+     name: "${friendly_name_gate} Remote"
+     icon: "mdi:gate"
+     on_turn_on:
+     - delay: 500ms
+     - switch.turn_off: relay1
+
+   - platform: gpio
+     pin: 17
+     id: relay2
+     restore_mode: ${relay2_restore_mode}
+     name: "${friendly_name_wicket} Remote"
+     icon: "mdi:gate"
+     on_turn_on:
+     - delay: 500ms
+     - switch.turn_off: relay2
+
+
+button:
+   - platform: restart
+     name: Restart ${short_name}  
+  
