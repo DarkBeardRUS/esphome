@@ -3,8 +3,8 @@ sensor:
     name: WiFi Signal ${short_name} 
   - platform: uptime
     name: Uptime ${short_name} 
-  - platform: internal_temperature
-    name: "Internal Temperature"
+#  - platform: internal_temperature
+#    name: "Internal Temperature"
 
   - platform: dallas
 #    address: 0xc600000ca617a628
