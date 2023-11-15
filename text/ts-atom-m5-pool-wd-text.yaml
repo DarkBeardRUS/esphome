@@ -9,7 +9,7 @@ text_sensor:
     mac_address:
       name: ${short_name} Mac Wifi Address
       id: my_mac
-    scan_results:
-      name: ${short_name} Latest Scan Results
+#    scan_results:
+#      name: ${short_name} Latest Scan Results
     dns_address:
       name: ${short_name} DNS Address
