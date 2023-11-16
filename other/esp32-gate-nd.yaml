@@ -30,7 +30,6 @@ button:
    - platform: restart
      name: Restart ${short_name}  
   
->>>>>>> 21f582aadbc346a9dd8cc68327b2222fc373cc17
 text_sensor:
   - platform: wifi_info
     ip_address:
