@@ -1,8 +1,5 @@
 status_led:
   pin: 23
-<<<<<<< HEAD
-
-=======
   
 web_server:
   port: 80
