@@ -2,6 +2,9 @@ time:
   - platform: sntp
     id: rtctime
     # ...
+    on_time_sync:
+      then:
+        - logger.log: "Synchronized sntp clock"
     on_time:
       - seconds: /10
         then:
