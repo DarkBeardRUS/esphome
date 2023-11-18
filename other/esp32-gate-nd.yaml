@@ -7,23 +7,23 @@ web_server:
 switch:
    - platform: gpio
      pin: 16
-     id: ${id_name}_switch1
+     id: switch_0_${id_name}
      restore_mode: ${switch1_restore_mode}
      name: "${friendly_name_gate} Remote"
      icon: "mdi:gate"
      on_turn_on:
      - delay: 500ms
-     - switch.turn_off: ${id_name}_switch1
+     - switch.turn_off: switch_0_${id_name}
 
    - platform: gpio
      pin: 17
-     id: ${id_name}_switch2
+     id: switch_1_${id_name}
      restore_mode: ${switch2_restore_mode}
      name: "${friendly_name_wicket} Remote"
      icon: "mdi:gate"
      on_turn_on:
      - delay: 500ms
-     - switch.turn_off: ${id_name}_switch2
+     - switch.turn_off: switch_1_${id_name}
 
 
 button:
