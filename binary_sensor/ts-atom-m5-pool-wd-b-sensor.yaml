@@ -13,7 +13,7 @@ binary_sensor:
     - min_length: 550ms
       max_length: 6000ms
       then:
-        - switch.toggle: relay2
+        - switch.toggle: ${id_name}_switch2
     internal: true
 
   - platform: template

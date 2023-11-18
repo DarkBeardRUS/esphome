@@ -3,8 +3,8 @@ sensor:
     name: WiFi Signal ${short_name} 
   - platform: uptime
     name: Uptime ${short_name} 
-  - platform: internal_temperature
-    name: "Internal Temperature"
+#  - platform: internal_temperature
+#    name: "Internal Temperature"
 
   - platform: dallas
 #    address: 0xc600000ca617a628
@@ -18,15 +18,15 @@ sensor:
     on_value_range:
       - above: !lambda 'return id(set_temp_pool).state;'
         then:
-          - switch.turn_off: relay2
+          - switch.turn_off: ${id_name}_switch2
       - below: !lambda 'return id(set_temp_pool).state;'
         then:
           if:
             condition:
-              - switch.is_on: relay1
+              - switch.is_on: ${id_name}_switch1
             then: 
-              - switch.turn_on: relay2
+              - switch.turn_on: ${id_name}_switch2
       # - above: 5.0
         # below: 10.0
         # then:
-          # - switch.turn_on: relay_2
+          # - switch.turn_on: ${id_name}_switch_2

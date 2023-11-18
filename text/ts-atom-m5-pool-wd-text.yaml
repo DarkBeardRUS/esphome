@@ -1,0 +1,15 @@
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: ${short_name} IP Address
+    ssid:
+      name: ${short_name} Connected SSID
+    bssid:
+      name: ${short_name} Connected BSSID
+    mac_address:
+      name: ${short_name} Mac Wifi Address
+      id: my_mac
+#    scan_results:
+#      name: ${short_name} Latest Scan Results
+    dns_address:
+      name: ${short_name} DNS Address
