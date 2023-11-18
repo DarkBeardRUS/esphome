@@ -29,21 +29,21 @@ time:
 #        days_of_week: SUN,MON,TUE,WED,THU,FRI,SAT
         then:
           - switch.turn_on: pool_c_w
-          - logger.log: "${name}_Switch  1 ON"
+          - logger.log: "${id_name}_Switch  1 ON"
       - seconds: 10
         minutes: 30
         hours: 2
         days_of_week: SUN,MON,TUE,WED,THU
         then:
           - switch.turn_off: pool_c_w
-          - logger.log: "${name}_Switch 1 OFF"
+          - logger.log: "${id_name}_Switch 1 OFF"
       - seconds: 10
         minutes: 00
         hours: 2
         days_of_week: FRI,SAT
         then:
           - switch.turn_off: pool_c_w
-          - logger.log: "${name}_Switch 1 OFF"
+          - logger.log: "${id_name}_Switch 1 OFF"
 ##############################################################################
       - seconds: 10
         minutes: 30
@@ -51,12 +51,12 @@ time:
         days_of_week: FRI,SAT
         then:
           - switch.turn_on: pool_c_w
-          - logger.log: "${name}_Switch 1 ON"
+          - logger.log: "${id_name}_Switch 1 ON"
       - seconds: 00
         minutes: 00
         hours: 7
         days_of_week: FRI,SAT
         then:
           - switch.turn_off: pool_c_w
-          - logger.log: "${name}_Switch 1 OFF"
+          - logger.log: "${id_name}_Switch 1 OFF"
 ###############################################################################
