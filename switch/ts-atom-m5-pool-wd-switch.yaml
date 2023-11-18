@@ -5,7 +5,7 @@ switch:
     icon: "mdi:pool"
     restore_mode: ${pool_c_w_restore_mode}
     turn_on_action:
-      - switch.turn_on: relay1
+      - switch.turn_on: ${name}_switch1
       - switch.template.publish:
           id: pool_c_w
           state: ON
@@ -14,25 +14,25 @@ switch:
             lambda: |-
               return id(set_temp_pool).state > id(tepm_pool).state;
           then:
-            - switch.turn_on: relay2
+            - switch.turn_on: ${name}_switch2
       
     turn_off_action:
-      - switch.turn_off: relay1
-      - switch.turn_off: relay2
+      - switch.turn_off: ${name}_switch1
+      - switch.turn_off: ${name}_switch2
       - switch.template.publish:
           id: pool_c_w
           state: OFF
 
   - platform: gpio
-    name: "Relay 1 ${short_name} "
+    name: "Switch 1 ${short_name} "
     pin: 22
-    id: relay1
-    restore_mode: ${relay1_restore_mode}
+    id: ${name}_switch1
+    restore_mode: ${switch1_restore_mode}
     internal: true
 
   - platform: gpio
-    name: "Relay 2 ${short_name} "
+    name: "Switch 2 ${short_name} "
     pin: 19
-    id: relay2
-    restore_mode: ${relay2_restore_mode}
+    id: ${name}_switch2
+    restore_mode: ${switch2_restore_mode}
     internal: true
