@@ -24,15 +24,15 @@ switch:
           state: OFF
 
   - platform: gpio
-    name: "Switch 1 ${short_name} "
+    name: "Switch 0 ${short_name} "
     pin: 22
     id: switch_0_${id_name}
-    restore_mode: ${switch1_restore_mode}
+    restore_mode: ${switch_0_restore_mode}
     internal: true
 
   - platform: gpio
-    name: "Switch 2 ${short_name} "
+    name: "Switch 1 ${short_name} "
     pin: 19
     id: switch_1_${id_name}
-    restore_mode: ${switch2_restore_mode}
+    restore_mode: ${switch_1_restore_mode}
     internal: true
