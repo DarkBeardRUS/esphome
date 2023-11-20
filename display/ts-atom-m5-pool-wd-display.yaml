@@ -15,17 +15,17 @@ display:
        } else {
          it.rectangle(0, 0, 5, 5, my_red);
        }
-       if (id(${id_name}_switch1).state) {
+       if (id(switch_0_${id_name}).state) {
          it.line(0, 1, 5, 1, my_purpur);  
        } else {
          it.line(1, 1, 3, 1, my_black);
        }
-       if (id(${id_name}_switch2).state) {
+       if (id(switch_1_${id_name}).state) {
          it.line(0, 3, 5, 3, my_purpur);  
        } else {
          it.line(1, 3, 3, 3, my_black);
        }
-       if  (id(${id_name}_switch1).state) {       
+       if  (id(${switch_0_${id_name}).state) {       
          if (id(tepm_pool).state <= 15) {
            it.line(0, 2, 5, 2, my_blue);  
          }
