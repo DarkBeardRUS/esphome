@@ -18,15 +18,15 @@ sensor:
     on_value_range:
       - above: !lambda 'return id(set_temp_pool).state;'
         then:
-          - switch.turn_off: ${id_name}_switch2
+          - switch.turn_off: switch_1_${id_name}
       - below: !lambda 'return id(set_temp_pool).state;'
         then:
           if:
             condition:
-              - switch.is_on: ${id_name}_switch1
+              - switch.is_on: switch_0_${id_name}
             then: 
-              - switch.turn_on: ${id_name}_switch2
+              - switch.turn_on: switch_1_${id_name}
       # - above: 5.0
         # below: 10.0
         # then:
-          # - switch.turn_on: ${id_name}_switch_2
+          # - switch.turn_on: switch_1_${id_name}
