@@ -22,41 +22,45 @@ time:
                     state: OFF
                 - logger.log: WiFi is NOT connected!
 ############################################################################
+#        days_of_week: MON-FRI
+#        days_of_week: SUN,MON,TUE,WED,THU,FRI,SAT
+############################################################################
       - seconds: 10
         minutes: 30
         hours: 23
-#        days_of_week: MON-FRI
-#        days_of_week: SUN,MON,TUE,WED,THU,FRI,SAT
         then:
           - switch.turn_on: pool_c_w
-          - logger.log: "${id_name}_Switch  1 ON"
+          - logger.log: "${id_name}_Switch Pool ON"
+#-----------------------------------------------------------------------------
       - seconds: 10
         minutes: 30
         hours: 2
-        days_of_week: SUN,MON,TUE,WED,THU
+        days_of_week: MON,TUE,WED,THU
         then:
           - switch.turn_off: pool_c_w
-          - logger.log: "${id_name}_Switch 1 OFF"
+          - logger.log: "${id_name}_Switch Pool OFF"
+#-----------------------------------------------------------------------------
       - seconds: 10
         minutes: 00
         hours: 2
-        days_of_week: FRI,SAT
+        days_of_week: FRI,SAT,SUN
         then:
           - switch.turn_off: pool_c_w
-          - logger.log: "${id_name}_Switch 1 OFF"
+          - logger.log: "${id_name}_Switch Pool OFF"
 ##############################################################################
       - seconds: 10
         minutes: 30
         hours: 3
-        days_of_week: FRI,SAT
+        days_of_week: FRI,SAT,SUN
         then:
           - switch.turn_on: pool_c_w
-          - logger.log: "${id_name}_Switch 1 ON"
+          - logger.log: "${id_name}_Switch Poll ON"
+#-----------------------------------------------------------------------------
       - seconds: 00
         minutes: 00
         hours: 7
-        days_of_week: FRI,SAT
+        days_of_week: FRI,SAT,SUN
         then:
           - switch.turn_off: pool_c_w
-          - logger.log: "${id_name}_Switch 1 OFF"
-###############################################################################
+          - logger.log: "${id_name}_Switch Pool OFF"
+##############################################################################
