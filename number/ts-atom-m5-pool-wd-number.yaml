@@ -11,4 +11,4 @@ number:
     step: 1
     mode: "box"
     device_class: TEMPERATURE
-    unit_of_measurement: C
+    unit_of_measurement: "°C"
