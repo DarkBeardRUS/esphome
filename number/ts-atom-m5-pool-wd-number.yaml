@@ -9,3 +9,6 @@ number:
     min_value: 5
     max_value: 40
     step: 1
+    mode: "box"
+    device_class: TEMPERATURE
+    unit_of_measurement: C
