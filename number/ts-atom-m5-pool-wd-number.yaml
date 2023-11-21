@@ -10,5 +10,6 @@ number:
     max_value: 40
     step: 1
     mode: "box"
-    device_class: TEMPERATURE
-    unit_of_measurement: "°C"
+    device_class: "temperature"
+    state_class: "measurement"
+#    unit_of_measurement: "C"

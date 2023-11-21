@@ -18,5 +18,5 @@ uart:
       - lambda: UARTDebug::log_string(direction, bytes);
 dallas:
  - pin: 25
-#   # update_interval: ${default_update_interval}
+   update_interval: ${default_update_interval}
 #   update_interval: 10s

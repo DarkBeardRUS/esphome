@@ -13,3 +13,7 @@ text_sensor:
 #      name: ${short_name} Latest Scan Results
     dns_address:
       name: ${short_name} DNS Address
+      
+  - platform: homeassistant
+    name: "Weather Forecast From Home Assistant"
+    entity_id: sensor.weather_forecast
