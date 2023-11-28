@@ -3,15 +3,15 @@ color:
     red_int: 0
     green_int: 0
     blue_int: 0
-  - id: my_red_int
+  - id: my_red
     red_int: 85
     green_int: 0
     blue_int: 0
-  - id: my_green_int
+  - id: my_green
     red_int: 0
     green_int: 85
     blue_int: 0
-  - id: my_blue_int
+  - id: my_blue
     red_int: 0
     green_int: 0
     blue_int: 85
