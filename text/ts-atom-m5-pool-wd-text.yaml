@@ -16,4 +16,4 @@ text_sensor:
       
   - platform: homeassistant
     name: "Weather Forecast From Home Assistant"
-    entity_id: sensor.weather_forecast
+    entity_id: weather.home_159_hourly
