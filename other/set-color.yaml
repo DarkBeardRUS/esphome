@@ -4,22 +4,22 @@ color:
     green_int: 0
     blue_int: 0
   - id: my_red
-    red_int: 85
+    red_int: ${my_brightness_int}
     green_int: 0
     blue_int: 0
   - id: my_green
     red_int: 0
-    green_int: 85
+    green_int: ${my_brightness_int}
     blue_int: 0
   - id: my_blue
     red_int: 0
     green_int: 0
-    blue_int: 85
+    blue_int: ${my_brightness_int}
   - id: my_yellow
-    red_int: 85
-    green_int: 85
+    red_int: ${my_brightness_int}
+    green_int: ${my_brightness_int}
     blue_int: 0
   - id: my_purpur
-    red_int: 85
+    red_int: ${my_brightness_int}
     green_int: 0
-    blue_int: 85
+    blue_int: ${my_brightness_int}
