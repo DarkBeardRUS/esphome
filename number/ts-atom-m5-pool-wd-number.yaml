@@ -12,15 +12,15 @@ number:
     mode: "box"
     device_class: "temperature"
 #    unit_of_measurement: "C"
-  - platform: template
-    name: "Display Brightness"
-    id: display_brightness_num
-    optimistic: true
-    min_value: 0
-    max_value: 255
-    step: 1
-    on_value:
-      then:
-        - globals.set:
-            id: my_brightness_int
-            value: !lambda "return int(x);"
+  # - platform: template
+    # name: "Display Brightness"
+    # id: display_brightness_num
+    # optimistic: true
+    # min_value: 0
+    # max_value: 255
+    # step: 1
+    # on_value:
+      # then:
+        # - globals.set:
+            # id: my_brightness_int
+            # value: !lambda "return int(x);"
