@@ -23,4 +23,4 @@ number:
       then:
         - globals.set:
             id: my_brightness_int
-            value: !lambda "return x;"
+            value: !lambda "return int(x);"
