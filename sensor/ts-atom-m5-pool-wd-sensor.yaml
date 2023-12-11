@@ -30,3 +30,18 @@ sensor:
         # below: 10.0
         # then:
           # - switch.turn_on: switch_1_${id_name}
+    index: 1
+    name: "Temperature 1 ${short_name}"
+    id: tepm_pool_1
+    icon: "mdi:water-percent"
+    device_class: "temperature"
+    state_class: "measurement"
+    accuracy_decimals: 1
+    
+    index: 2
+    name: "Temperature 2 ${short_name}"
+    id: tepm_pool_2
+    icon: "mdi:water-percent"
+    device_class: "temperature"
+    state_class: "measurement"
+    accuracy_decimals: 1
