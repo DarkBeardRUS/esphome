@@ -1,6 +1,7 @@
 switch:
    - platform: gpio
      pin: 16
+     allow_other_uses: true
      id: ${id_name}_switch1
      restore_mode: ${switch1_restore_mode}
      name: ${friendly_name_gate} Remote
@@ -11,6 +12,7 @@ switch:
 
    - platform: gpio
      pin: 17
+     allow_other_uses: true
      id: ${id_name}_switch2
      restore_mode: ${switch2_restore_mode}
      name: ${friendly_name_wicket} Remote
