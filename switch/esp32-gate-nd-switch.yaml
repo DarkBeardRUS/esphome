@@ -1,6 +1,6 @@
 switch:
    - platform: gpio
-     pin: 16
+     pin: GPIO16
      allow_other_uses: true
      id: ${id_name}_switch1
      restore_mode: ${switch1_restore_mode}
@@ -11,7 +11,7 @@ switch:
      - switch.turn_off: ${id_name}_switch1
 
    - platform: gpio
-     pin: 17
+     pin: GPIO17
      allow_other_uses: true
      id: ${id_name}_switch2
      restore_mode: ${switch2_restore_mode}
