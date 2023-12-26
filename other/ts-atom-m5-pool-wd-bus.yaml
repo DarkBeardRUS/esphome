@@ -1,6 +1,8 @@
 i2c:
   - id: grove_bus
-    sda: GPIO25
+    sda:
+      number: GPIO25
+      allow_other_uses: true
     scl: GPIO21
     scan: True
 
@@ -17,6 +19,8 @@ uart:
     sequence:
       - lambda: UARTDebug::log_string(direction, bytes);
 dallas:
- - pin: 25
-   update_interval: ${default_update_interval}
+  pin:
+    number: 25
+    allow_other_uses: true
+  update_interval: ${default_update_interval}
 #   update_interval: 10s
