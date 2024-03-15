@@ -20,3 +20,7 @@ binary_sensor:
     name: "WiFi Connect"
     id: wifi_connect
     internal: true
+  
+  - platform: homeassistant
+    name: "Мы в отпуске"
+    entity_id: input_boolean.otpusk

@@ -53,8 +53,12 @@ time:
         hours: 3
 #        days_of_week: FRI,SAT,SUN
         then:
-          - switch.turn_on: pool_c_w
-          - logger.log: "${id_name}_Switch Poll ON"
+            -if:
+               condition:
+                 binary_sensor.is_on: input_boolean.otpusk
+               then:
+                - switch.turn_on: pool_c_w
+                - logger.log: "${id_name}_Switch Poll ON"
 #-----------------------------------------------------------------------------
       - seconds: 00
         minutes: 30
