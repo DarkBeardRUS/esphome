@@ -29,6 +29,7 @@ switch:
     id: switch_0_${id_name}
     restore_mode: ${switch_0_restore_mode}
     internal: true
+    disabled_by_default: true
 
   - platform: gpio
     name: "Switch 1 ${short_name} "
@@ -36,3 +37,4 @@ switch:
     id: switch_1_${id_name}
     restore_mode: ${switch_1_restore_mode}
     internal: true
+    disabled_by_default: true
