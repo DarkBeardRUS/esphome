@@ -22,5 +22,6 @@ binary_sensor:
     internal: true
   
   - platform: homeassistant
-    name: "Мы в отпуске"
+    name: "РњС‹ РІ РѕС‚РїСѓСЃРєРµ"
+    id: we_otpusk
     entity_id: input_boolean.otpusk
