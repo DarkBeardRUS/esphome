@@ -18,9 +18,8 @@ uart:
       delimiter: "\n"
     sequence:
       - lambda: UARTDebug::log_string(direction, bytes);
-dallas:
-  pin:
-    number: 25
-    allow_other_uses: true
-  update_interval: ${default_update_interval}
-#   update_interval: 10s
+one_wire:
+  - platform: gpio
+    pin:
+      number: 25
+      allow_other_uses: true
