@@ -7,8 +7,8 @@ sensor:
 #    name: "Internal Temperature"
 
   - platform: dallas_temp
-#    address: 0xc600000ca617a628
-    index: 0
+    address: 0xc600000ca617a628
+#    index: 0
     name: "Temperature ${short_name}"
     id: tepm_pool
     icon: "mdi:water-percent"
