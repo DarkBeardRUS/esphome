@@ -32,18 +32,22 @@ sensor:
   
 binary_sensor:
   - platform: gpio
+    device_class: door
+    icon: mdi:door-open
     pin:
       number: 34
 #      inverted: True
     name: "${friendly_name_wicket} ${short_name}"
-    internal: true
+#    internal: true
 
   - platform: gpio
+    device_class: garage_door
+    icon: mdi:gate-open
     pin:
       number: 35
 #      inverted: True
     name: "${friendly_name_gate} ${short_name}"
-    internal: true
+#    internal: true
     
 
 #  Pin  	  Pin Label  	  GPIO  	  Safe to use?  	Reason
