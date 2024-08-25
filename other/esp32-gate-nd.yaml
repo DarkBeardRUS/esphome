@@ -24,6 +24,27 @@ sensor:
   - platform: uptime
     name: Uptime ${short_name}   
 
+sensor:
+  - platform: wifi_signal
+    name: WiFi Signal ${short_name} 
+  - platform: uptime
+    name: Uptime ${short_name}   
+  
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: 34
+#      inverted: True
+    name: "${friendly_name_wicket} ${short_name}"
+    internal: true
+
+  - platform: gpio
+    pin:
+      number: 35
+#      inverted: True
+    name: "${friendly_name_gate} ${short_name}"
+    internal: true
+    
 
 #  Pin  	  Pin Label  	  GPIO  	  Safe to use?  	Reason
 #4	SENSOR_VP	GPIO36		Input only GPIO, cannot be configured as output
