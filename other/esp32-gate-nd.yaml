@@ -23,12 +23,6 @@ sensor:
     name: WiFi Signal ${short_name} 
   - platform: uptime
     name: Uptime ${short_name}   
-
-sensor:
-  - platform: wifi_signal
-    name: WiFi Signal ${short_name} 
-  - platform: uptime
-    name: Uptime ${short_name}   
   
 binary_sensor:
   - platform: gpio
