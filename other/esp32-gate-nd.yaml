@@ -4,6 +4,11 @@ status_led:
 web_server:
   port: 80
 
+uart:
+  id: range_uart
+  tx_pin: GPIO32
+  rx_pin: GPIO33
+  baud_rate: 9600
   
 text_sensor:
   - platform: wifi_info
@@ -21,8 +26,14 @@ text_sensor:
 sensor:
   - platform: wifi_signal
     name: WiFi Signal ${short_name} 
+
   - platform: uptime
     name: Uptime ${short_name}   
+
+  - platform: "jsn_sr04t"
+    name: "Distance"
+    update_interval: 1s
+    uart_id: range_uart
   
 binary_sensor:
   - platform: gpio
@@ -30,7 +41,7 @@ binary_sensor:
     icon: mdi:door-open
     pin:
       number: 34
-#      inverted: True
+      inverted: True
     name: "${friendly_name_wicket} ${short_name}"
 #    internal: true
 
@@ -39,7 +50,7 @@ binary_sensor:
     icon: mdi:gate-open
     pin:
       number: 35
-#      inverted: True
+      inverted: True
     name: "${friendly_name_gate} ${short_name}"
 #    internal: true
     
@@ -49,8 +60,8 @@ binary_sensor:
 #5	SENSOR_VN	GPIO39		Input only GPIO, cannot be configured as output
 #6	IO34	GPIO34		Input only GPIO, cannot be configured as output   Геркон ворота
 #7	IO35	GPIO35		Input only GPIO, cannot be configured as output   Геркон Калитка
-#8	IO32	GPIO32		
-#9	IO33	GPIO33		
+#8	IO32	GPIO32		TX Soft
+#9	IO33	GPIO33		RX Soft
 #10	IO25	GPIO25		
 #11	IO26	GPIO26		
 #12	IO27	GPIO27		Дальномер
