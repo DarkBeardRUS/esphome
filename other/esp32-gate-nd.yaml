@@ -9,7 +9,13 @@ uart:
   tx_pin: GPIO32
   rx_pin: GPIO33
   baud_rate: 9600
-  
+
+i2c:
+  sda: GPIO21
+  scl: GPIO22
+  scan: true
+  id: bus_a  
+
 text_sensor:
   - platform: wifi_info
     ip_address:
