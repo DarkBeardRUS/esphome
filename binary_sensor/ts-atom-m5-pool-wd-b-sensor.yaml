@@ -25,3 +25,8 @@ binary_sensor:
     name: "Мы в отпуске"
     id: we_otpusk
     entity_id: input_boolean.otpusk
+
+  - platform: homeassistant
+    name: "Греем всю ночь"
+    id: greem_bassein_vsiu_noch
+    entity_id: input_boolean.greem_bassein_vsiu_noch
