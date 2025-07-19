@@ -44,16 +44,24 @@ time:
         hours: 2
         days_of_week: MON,TUE,WED,THU
         then:
-          - switch.turn_off: pool_c_w
-          - logger.log: "${id_name}_Switch Pool OFF"
+            - if:
+                condition:
+                  binary_sensor.is_off: greem_bassein_vsiu_noch
+                then:
+                  - switch.turn_off: pool_c_w
+                  - logger.log: "${id_name}_Switch Pool OFF"
 #-----------------------------------------------------------------------------
       - seconds: 10
         minutes: 00
         hours: 2
         days_of_week: FRI,SAT,SUN
         then:
-          - switch.turn_off: pool_c_w
-          - logger.log: "${id_name}_Switch Pool OFF"
+            - if:
+                condition:
+                  binary_sensor.is_off: greem_bassein_vsiu_noch
+                then:
+                  - switch.turn_off: pool_c_w
+                  - logger.log: "${id_name}_Switch Pool OFF"
 ##############################################################################
       - seconds: 10
         minutes: 00
@@ -66,8 +74,12 @@ time:
         minutes: 30
         hours: 4
         then:
-          - switch.turn_off: pool_c_w
-          - logger.log: "${id_name}_Switch Pool OFF"
+            - if:
+                condition:
+                  binary_sensor.is_off: greem_bassein_vsiu_noch
+                then:
+                  - switch.turn_off: pool_c_w
+                  - logger.log: "${id_name}_Switch Pool OFF"
 ################################################################################
       - seconds: 10
         minutes: 00
@@ -87,7 +99,7 @@ time:
       - seconds: 00
         minutes: 00
         hours: 7
-        days_of_week: FRI,SAT,SUN
+#        days_of_week: FRI,SAT,SUN
         then:
           - switch.turn_off: pool_c_w
           - logger.log: "${id_name}_Switch Pool OFF"
