@@ -107,4 +107,3 @@ binary_sensor:
 #35	TXD0	GPIO1		Tx pin, used for flashing and debugging
 #36	IO22	GPIO22		SCL (I2C)
 #37	IO23	GPIO23	LED	
->>>>>>> test
