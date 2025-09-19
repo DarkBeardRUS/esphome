@@ -6,27 +6,27 @@ sensor:
 #  - platform: internal_temperature
 #    name: "Internal Temperature"
 
-  - platform: dallas_temp
-    address: 0xc600000ca617a628
-#    index: 0
-    name: "Temperature ${short_name}"
-    id: tepm_pool
-    icon: "mdi:water-percent"
-    device_class: "temperature"
-    state_class: "measurement"
-    accuracy_decimals: 1
-    on_value_range:
-      - above: !lambda 'return id(set_temp_pool).state;'
-        then:
-          - switch.turn_off: switch_1_${id_name}
-      - below: !lambda 'return id(set_temp_pool).state;'
-        then:
-          if:
-            condition:
-              - switch.is_on: switch_0_${id_name}
-            then: 
-              - switch.turn_on: switch_1_${id_name}
-      # - above: 5.0
-        # below: 10.0
-        # then:
-          # - switch.turn_on: switch_1_${id_name}
+#  - platform: dallas_temp
+#    address: 0xc600000ca617a628
+##    index: 0
+#    name: "Temperature ${short_name}"
+#    id: tepm_pool
+#    icon: "mdi:water-percent"
+#    device_class: "temperature"
+#    state_class: "measurement"
+#    accuracy_decimals: 1
+#    on_value_range:
+#      - above: !lambda 'return id(set_temp_pool).state;'
+#        then:
+#          - switch.turn_off: switch_1_${id_name}
+#      - below: !lambda 'return id(set_temp_pool).state;'
+#        then:
+#          if:
+#            condition:
+#              - switch.is_on: switch_0_${id_name}
+#            then: 
+#              - switch.turn_on: switch_1_${id_name}
+#      # - above: 5.0
+#        # below: 10.0
+#        # then:
+#          # - switch.turn_on: switch_1_${id_name}
