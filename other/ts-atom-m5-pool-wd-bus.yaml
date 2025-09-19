@@ -1,8 +1,8 @@
 i2c:
   - id: grove_bus
-    sda:
-      number: GPIO33
-      allow_other_uses: true
+    sda: GPIO33
+#      number: GPIO33
+#      allow_other_uses: true
     scl: GPIO23
     scan: True
 
