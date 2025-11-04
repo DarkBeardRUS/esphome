@@ -9,16 +9,9 @@ switch:
       - switch.template.publish:
           id: pool_c_w
           state: ON
-      - if:
-          condition:
-            lambda: |-
-              return id(set_temp_pool).state > id(tepm_pool).state;
-          then:
-            - switch.turn_on: switch_1_${id_name}
       
     turn_off_action:
       - switch.turn_off: switch_0_${id_name}
-      - switch.turn_off: switch_1_${id_name}
       - switch.template.publish:
           id: pool_c_w
           state: OFF

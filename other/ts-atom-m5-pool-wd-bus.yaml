@@ -1,25 +1,38 @@
 i2c:
   - id: grove_bus
-    sda:
-      number: GPIO25
-      allow_other_uses: true
+    sda: GPIO25
+#    sda: GPIO21
+#      number: GPIO33
+#      allow_other_uses: true
     scl: GPIO21
+#    scl: GPIO25
+    timeout: 15ms
+    frequency: 10kHz
     scan: True
 
+#  - id: i485_bus
+#    sda: GPIO23
+#    scl: GPIO33
+#    scan: true
 
-uart:
-  tx_pin: 23
-  rx_pin: 33
-  baud_rate: 115200
-  debug:
-    direction: BOTH
-    dummy_receiver: false
-    after:
-      delimiter: "\n"
-    sequence:
-      - lambda: UARTDebug::log_string(direction, bytes);
+#uart:
+#  tx_pin: 23
+#  rx_pin: 33
+#  baud_rate: 115200
+#  debug:
+#    direction: BOTH
+#    dummy_receiver: false
+#    after:
+#      delimiter: "\n"
+#    sequence:
+#      - lambda: UARTDebug::log_string(direction, bytes);
+#
 one_wire:
-  - platform: gpio
-    pin:
-      number: 25
-      allow_other_uses: true
+  - platform: ds2484
+    active_pullup: true
+
+#one_wire:
+#  - platform: gpio
+#    pin:
+#      number: 25
+#      allow_other_uses: true
