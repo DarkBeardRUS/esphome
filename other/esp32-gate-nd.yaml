@@ -55,7 +55,7 @@ binary_sensor:
 #      inverted: True
     name: "${friendly_name_gate} ${short_name}"
     internal: true
-=======
+# =======
     device_class: door
     icon: mdi:door-open
     pin:
