@@ -36,33 +36,21 @@ sensor:
   - platform: uptime
     name: Uptime ${short_name}   
 
-  - platform: "jsn_sr04t"
-    name: "Distance"
-    update_interval: 1s
-    uart_id: range_uart
+#  - platform: "jsn_sr04t"
+#    name: "Distance"
+#    update_interval: 1s
+#    uart_id: range_uart
+
   
 binary_sensor:
   - platform: gpio
-    pin:
-      number: 34
-#      inverted: True
-    name: "${friendly_name_wicket} ${short_name}"
-    internal: true
-
-  - platform: gpio
-    pin:
-      number: 35
-#      inverted: True
-    name: "${friendly_name_gate} ${short_name}"
-    internal: true
-# =======
     device_class: door
     icon: mdi:door-open
     pin:
       number: 34
       inverted: True
     name: "${friendly_name_wicket} ${short_name}"
-#    internal: true
+    internal: true
 
   - platform: gpio
     device_class: garage_door
@@ -71,7 +59,7 @@ binary_sensor:
       number: 35
       inverted: True
     name: "${friendly_name_gate} ${short_name}"
-#    internal: true
+    internal: true
     
 
 #  Pin  	  Pin Label  	  GPIO  	  Safe to use?  	Reason
