@@ -8,7 +8,7 @@ sensor:
     address: 0xc600000ca617a628
     name: "Temperature ${short_name}"
     id: tepm_pool
-    icon: "mdi:water-percent"
+    icon: "mdi:coolant-temperature"
     device_class: "temperature"
     state_class: "measurement"
     accuracy_decimals: 1
